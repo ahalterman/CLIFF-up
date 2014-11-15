@@ -8,7 +8,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     vb.customize ["modifyvm", :id, "--memory", "4096"]
     v.cpus = 2
   end
-  config.vm.box = "ubuntu/trusty64"
-  config.vm.box_url = "https://vagrantcloud.com/ubuntu/trusty64"
+  config.vm.box = "hashicorp/precise64"
+  config.vm.network "forwarded_port", guest: 8080, host: 8999
   config.vm.provision :shell, :path => "bootstrap.sh"
 end
