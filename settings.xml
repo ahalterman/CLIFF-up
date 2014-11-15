@@ -1,0 +1,7 @@
+<servers>
+  <server>
+    <id>CliffTomcatServer</id>
+    <username>cliff</username>
+    <password>beer</password>
+  </server>
+</servers>
