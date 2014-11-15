@@ -1,6 +1,9 @@
 CLIFF up
 =========
 
+**This is not yet working software. The bootstrap.sh file that does all of the
+real work is not uploaded yet so don't even try to use this.**
+
 This repo contains everything you need to painlessly get MIT's CLIFF
 text geolocation server up and running inside a virtual machine that you can access
 from your host machine. CLIFF takes text as input and returns a structured list
