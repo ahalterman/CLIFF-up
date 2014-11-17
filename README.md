@@ -7,7 +7,11 @@ real work is not uploaded yet so don't even try to use this.**
 This repo contains everything you need to painlessly get MIT's CLIFF
 text geolocation server up and running inside a virtual machine that you can access
 from your host machine. CLIFF takes text as input and returns a structured list
-of the places the text is about.
+of the places the text is about. It is built on Berico Technologies'
+[CLAVIN](https://github.com/Berico-Technologies/CLAVIN) geotagging and
+geoparsing software and Stanford's
+[CoreNLP](http://nlp.stanford.edu/software/corenlp.shtml) natural language
+parsing software.
 
 [CLIFF](http://cliff.mediameter.org/), according to its
 [Github](https://github.com/c4fcm/CLIFF) is a "lightweight server to allow HTTP
@@ -53,7 +57,7 @@ instructions will also give you a good place to start doing that.
    
    > If you're unfamiliar with the command line, don't worry, this
    > is easy. In a Mac, highlight the folder in finder and go to File > Get Info.
-   > Copy the path it has after "Where" (something like "/Users/.../CLIFF-up".
+   > Copy the path it has after "Where" (something like "/Users/.../CLIFF-up").
    > Open the Terminal, type `cd ` and paste that path. You'll now be inside your
    > folder.
 
@@ -61,7 +65,10 @@ instructions will also give you a good place to start doing that.
      as in potentially a couple of hours to download everything and compile the
      index for the geographic placenames. (It builds a Lucene index of all ~10
      million place names to give awesome millisecond search abilities, but that
-     takes a while).
+     takes a while). There might be a few warnings, but that's normal. There
+     might be some errors, including a "Build Failure" warning when compiling
+     CLIFF, but don't worry about those unless the whole thing fails out or you
+     can't get anything out of it when it's all done.
 
 6. When it's done running (seriously, make two cups), go to
     <http://localhost:8999/CLIFF-2.0.0/parse/text?q=In%20Syria,%20two%20airstrikes%20west%20of%20Al-Hasakah%20successfully%20struck%20multiple%20ISIL%20buildings,%20including%20an%20air%20observation%20building%20and%20staging%20areas.>
