@@ -73,7 +73,8 @@ instructions will also give you a good place to start doing that.
 6. When it's done running (seriously, make two cups), go to
     <http://localhost:8999/CLIFF-2.0.0/parse/text?q=In%20Syria,%20two%20airstrikes%20west%20of%20Al-Hasakah%20successfully%20struck%20multiple%20ISIL%20buildings,%20including%20an%20air%20observation%20building%20and%20staging%20areas.>
     and see if it spits out some JSON. To do your own sentences, delete
-    everything after "?q=" and put in your own text.
+    everything after "?q=" and put in your own text. It could take a couple of
+    minutes to get the server completely up and running after it's deployed.
 
 Maintenance
 --------
