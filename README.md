@@ -1,9 +1,6 @@
 CLIFF up
 =========
 
-**This is not yet working software. The bootstrap.sh file that does all of the
-real work is not uploaded yet so don't even try to use this.**
-
 This repo contains everything you need to painlessly get MIT's CLIFF
 text geolocation server up and running inside a virtual machine that you can access
 from your host machine. CLIFF takes text as input and returns a structured list
@@ -70,11 +67,18 @@ instructions will also give you a good place to start doing that.
      CLIFF, but don't worry about those unless the whole thing fails out or you
      can't get anything out of it when it's all done.
 
-6. When it's done running (seriously, make two cups), go to
-    <http://localhost:8999/CLIFF-2.0.0/parse/text?q=In%20Syria,%20two%20airstrikes%20west%20of%20Al-Hasakah%20successfully%20struck%20multiple%20ISIL%20buildings,%20including%20an%20air%20observation%20building%20and%20staging%20areas.>
-    and see if it spits out some JSON. To do your own sentences, delete
-    everything after "?q=" and put in your own text. It could take a couple of
-    minutes to get the server completely up and running after it's deployed.
+6. When it's done provisioning the machine (seriously, make two cups), go to
+   <http://localhost:8999/CLIFF-2.0.0/parse/text?q=In%20Syria,%20two%20airstrikes%20west%20of%20Al-Hasakah%20successfully%20struck%20multiple%20ISIL%20buildings,%20including%20an%20air%20observation%20building%20and%20staging%20areas.>
+   and see if it spits out some JSON.  To do your own sentences, delete
+   everything after "?q=" and put in your own text. It could take a couple of
+   minutes to get the server completely up and running after it's deployed.
+
+   If you don't get anything from the web page, or the last line of the
+   provisioning script returns `/tmp/vagrant-shell: 102: /tmp/vagrant-shell:
+   /bin/startup.sh: not found`, the Tomcat server may not have started. From
+   the folder where you built the VM, log into the VM by typing `vagrant ssh`,
+   then, from inside the VM, run `sudo $CATALINA_HOME/bin/startup.sh`. That
+   should get it going.
 
 Maintenance
 --------

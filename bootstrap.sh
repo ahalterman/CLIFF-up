@@ -98,6 +98,10 @@ sudo mvn tomcat7:deploy -DskipTests
 
 echo "Move files around and redeploy"
 sudo mv /home/vagrant/CLIFF/target/CLIFF-2.0.0.war /home/vagrant/apache-tomcat-7.0.57/webapps/
-sudo $CATALINA_HOME/bin/shutdown.sh
-sudo $CATALINA_HOME/bin/startup.sh
+sudo /home/vagrant/apache-tomcat-7.0.57/bin/shutdown.sh
+sudo /home/vagrant/apache-tomcat-7.0.57/bin/startup.sh
+echo "Installation Complete"
+echo "You can log into the virtual machine by typing 'vagrant ssh'..."
+echo "If you need to manually start the Tomcat server, log in to the VM, then type 'sudo $CATALINA_HOME/bin/startup.sh' to start the server"
+echo "You can temporarily shut down the virtual machine by typing 'vagrant halt'." 
 
