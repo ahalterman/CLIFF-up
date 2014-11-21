@@ -80,17 +80,19 @@ instructions will also give you a good place to start doing that.
    then, from inside the VM, run `sudo $CATALINA_HOME/bin/startup.sh`. That
    should get it going.
 
-Maintenance
---------
-The virtual machine is pretty heavy duty (I gave it 4 gigs of RAM), so you
-might not want to keep it running all the time. To shut it down, navigate to
-the folder you started it from, and run (from the terminal) `vagrant halt`. To
-start it up again run `vagrant up`. This time it should only take about
-a minute to get up and running since it saves all the setup from the first
-time. When you start it up, you'll need to log into the VM to get the server up
-and running. Type `vagrant ssh` and you'll log into the VM. Paste this to get
-the Tomcat server running: `$CATALINA_HOME/bin/startup.sh`. You can logout or
-close the window without killing the virtual machine.
+Maintenance 
+-------- 
+
+The virtual machine is pretty heavy duty (I gave it 4 gigs
+of RAM), so you might not want to keep it running all the time. To shut it
+down, navigate to the folder you started it from, and run (from the terminal)
+`vagrant halt`. To start it up again run `vagrant up`. This time it should only
+take about a minute to get up and running since it saves all the setup from the
+first time. When you start it up, you'll need to log into the VM to get the
+server up and running. Type `vagrant ssh` and you'll log into the VM. Paste
+this to get the Tomcat server running: `sudo
+/home/vagrant/apache-tomcat-7.0.57/bin/startup.sh`. You can logout or close the
+window without killing the virtual machine.
 
 
 

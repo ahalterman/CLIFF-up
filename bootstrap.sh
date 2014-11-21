@@ -102,6 +102,6 @@ sudo /home/vagrant/apache-tomcat-7.0.57/bin/shutdown.sh
 sudo /home/vagrant/apache-tomcat-7.0.57/bin/startup.sh
 echo "Installation Complete"
 echo "You can log into the virtual machine by typing 'vagrant ssh'..."
-echo "If you need to manually start the Tomcat server, log in to the VM, then type 'sudo $CATALINA_HOME/bin/startup.sh' to start the server"
+echo "If you need to manually start the Tomcat server, log in to the VM, then type 'sudo /home/vagrant/apache-tomcat-7.0.57/bin/startup.sh' to start the server"
 echo "You can temporarily shut down the virtual machine by typing 'vagrant halt'." 
 
