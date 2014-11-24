@@ -41,6 +41,10 @@ instructions will also give you a good place to start doing that.
 
 2. Download and install [VirtualBox](https://www.virtualbox.org/wiki/Downloads).
 
+   > Windows users may need to turn on virtualization, which needs to be
+   > enabled at the BIOS level. If it's not on, it can produce some unclear
+   > errors. (Thanks @chilland for pointing this out!)
+
 3. Clone this repository (either from the command line with `git clone` or
    using the download zip button on the lower right side of this page. Make
    sure you unzip it if you take the second route). This repo contains the
