@@ -83,7 +83,9 @@ MAVEN_OPTS="-Xmx4g" mvn exec:java -Dexec.mainClass="com.bericotech.clavin.index.
 sudo mkdir /etc/cliff2
 sudo ln -s /home/vagrant/CLAVIN/IndexDirectory /etc/cliff2/IndexDirectory
 
-cd /home/vagrant/.m2/
+cd /home/vagrant/
+sudo mkdir .m2
+cd .m2
 sudo rm settings.xml
 sudo wget https://raw.githubusercontent.com/ahalterman/CLIFF-up/master/settings.xml
 
@@ -92,8 +94,8 @@ cd /home/vagrant
 sudo git clone https://github.com/c4fcm/CLIFF
 cd CLIFF
 sudo rm pom.xml 
-#sudo wget https://raw.githubusercontent.com/ahalterman/CLIFF-up/master/pom.xml
-sudo mv /home/vagrant/CLIFF-up/pom.xml /home/vagrant/CLIFF
+sudo wget https://raw.githubusercontent.com/ahalterman/CLIFF-up/master/pom.xml
+#sudo mv /home/vagrant/CLIFF-up/pom.xml /home/vagrant/CLIFF
 
 sudo mvn tomcat7:deploy -DskipTests
 

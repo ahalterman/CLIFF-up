@@ -95,7 +95,7 @@ take about a minute to get up and running since it saves all the setup from the
 first time. When you start it up, you'll need to log into the VM to get the
 server up and running. Type `vagrant ssh` and you'll log into the VM. Paste
 this to get the Tomcat server running: `sudo
-/home/vagrant/apache-tomcat-7.0.57/bin/startup.sh`. You can logout or close the
+/home/vagrant/apache-tomcat-7.0.59/bin/startup.sh`. You can logout or close the
 window without killing the virtual machine.
 
 
