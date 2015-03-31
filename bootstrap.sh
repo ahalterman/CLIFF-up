@@ -53,12 +53,12 @@ EOF
 
 echo "Download Tomcat"
 cd /home/vagrant
-sudo wget http://download.nextag.com/apache/tomcat/tomcat-7/v7.0.57/bin/apache-tomcat-7.0.57.tar.gz
-sudo tar -xvzf apache-tomcat-7.0.57.tar.gz
-#sudo rm apache-tomcat-7.0.57.tar.gz
+sudo wget http://download.nextag.com/apache/tomcat/tomcat-7/v7.0.59/bin/apache-tomcat-7.0.59.tar.gz 
+sudo tar -xvzf apache-tomcat-7.0.59.tar.gz
+#sudo rm apache-tomcat-7.0.59.tar.gz
 
 # get tomcat users set up correctly
-cd /home/vagrant/apache-tomcat-7.0.57/conf
+cd /home/vagrant/apache-tomcat-7.0.59/conf
 sudo rm tomcat-users.xml
 sudo wget https://raw.githubusercontent.com/ahalterman/CLIFF-up/master/tomcat-users.xml
 
@@ -83,7 +83,9 @@ MAVEN_OPTS="-Xmx4g" mvn exec:java -Dexec.mainClass="com.bericotech.clavin.index.
 sudo mkdir /etc/cliff2
 sudo ln -s /home/vagrant/CLAVIN/IndexDirectory /etc/cliff2/IndexDirectory
 
-cd /home/vagrant/.m2/
+cd /home/vagrant/
+sudo mkdir .m2
+cd .m2
 sudo rm settings.xml
 sudo wget https://raw.githubusercontent.com/ahalterman/CLIFF-up/master/settings.xml
 
@@ -93,15 +95,16 @@ sudo git clone https://github.com/c4fcm/CLIFF
 cd CLIFF
 sudo rm pom.xml 
 sudo wget https://raw.githubusercontent.com/ahalterman/CLIFF-up/master/pom.xml
+#sudo mv /home/vagrant/CLIFF-up/pom.xml /home/vagrant/CLIFF
 
 sudo mvn tomcat7:deploy -DskipTests
 
 echo "Move files around and redeploy"
-sudo mv /home/vagrant/CLIFF/target/CLIFF-2.0.0.war /home/vagrant/apache-tomcat-7.0.57/webapps/
-sudo /home/vagrant/apache-tomcat-7.0.57/bin/shutdown.sh
-sudo /home/vagrant/apache-tomcat-7.0.57/bin/startup.sh
+sudo mv /home/vagrant/CLIFF/target/CLIFF-2.0.0.war /home/vagrant/apache-tomcat-7.0.59/webapps/
+sudo /home/vagrant/apache-tomcat-7.0.59/bin/shutdown.sh
+sudo /home/vagrant/apache-tomcat-7.0.59/bin/startup.sh
 echo "Installation Complete"
 echo "You can log into the virtual machine by typing 'vagrant ssh'..."
-echo "If you need to manually start the Tomcat server, log in to the VM, then type 'sudo /home/vagrant/apache-tomcat-7.0.57/bin/startup.sh' to start the server"
+echo "If you need to manually start the Tomcat server, log in to the VM, then type 'sudo /home/vagrant/apache-tomcat-7.0.59/bin/startup.sh' to start the server"
 echo "You can temporarily shut down the virtual machine by typing 'vagrant halt'." 
 
