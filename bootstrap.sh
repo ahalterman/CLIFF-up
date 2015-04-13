@@ -91,7 +91,10 @@ sudo wget https://raw.githubusercontent.com/ahalterman/CLIFF-up/master/settings.
 
 echo "Download CLIFF"
 cd /home/vagrant
-sudo git clone https://github.com/c4fcm/CLIFF
+#sudo git clone https://github.com/c4fcm/CLIFF
+sudo wget https://github.com/c4fcm/CLIFF/archive/v2.0.0.tar.gz
+sudo tar -xvzf v2.0.0.tar.gz
+sudo mv CLIFF-2.0.0/ CLIFF
 cd CLIFF
 sudo rm pom.xml 
 sudo wget https://raw.githubusercontent.com/ahalterman/CLIFF-up/master/pom.xml
