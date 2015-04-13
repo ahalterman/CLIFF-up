@@ -53,7 +53,7 @@ EOF
 
 echo "Download Tomcat"
 cd /home/vagrant
-sudo wget http://download.nextag.com/apache/tomcat/tomcat-7/v7.0.59/bin/apache-tomcat-7.0.59.tar.gz 
+sudo wget http://archive.apache.org/dist/tomcat/tomcat-7/v7.0.59/bin/apache-tomcat-7.0.59.tar.gz 
 sudo tar -xvzf apache-tomcat-7.0.59.tar.gz
 #sudo rm apache-tomcat-7.0.59.tar.gz
 
