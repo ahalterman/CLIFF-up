@@ -1,5 +1,5 @@
 #!/bin/sh
-CLIFF_VERSION=2.1.0
+CLIFF_VERSION=2.1.1
 
 sudo apt-get update
 echo "Installing basic packages..."
@@ -102,5 +102,6 @@ sudo /home/vagrant/apache-tomcat-7.0.59/bin/startup.sh
 echo "Installation Complete"
 echo "You can log into the virtual machine by typing 'vagrant ssh'..."
 echo "If you need to manually start the Tomcat server, log in to the VM, then type 'sudo /home/vagrant/apache-tomcat-7.0.59/bin/startup.sh' to start the server"
-echo "You can temporarily shut down the virtual machine by typing 'vagrant halt'." 
-
+echo "You can pause the virtual machine by typing 'vagrant suspend'." 
+echo "You can start it again by typing 'vagrant resume'." 
+echo "Type 'vagrant' for more commands that let you control the virtual machine."
