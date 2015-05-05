@@ -1,4 +1,5 @@
 #!/bin/sh
+CLIFF_VERSION=2.1.1
 
 sudo apt-get update
 echo "Installing basic packages..."
@@ -65,10 +66,16 @@ sudo wget https://raw.githubusercontent.com/ahalterman/CLIFF-up/master/tomcat-us
 echo "Boot Tomcat"
 $CATALINA_HOME/bin/startup.sh
 
+echo "Download CLIFF"
+cd /home/vagrant
+sudo wget https://github.com/c4fcm/CLIFF/releases/download/v$CLIFF_VERSION/CLIFF-$CLIFF_VERSION.war
+sudo mv /home/vagrant/CLIFF-$CLIFF_VERSION.war /home/vagrant/apache-tomcat-7.0.59/webapps/
+
 echo "Downloading CLAVIN..."
 cd /home/vagrant
 sudo git clone https://github.com/Berico-Technologies/CLAVIN.git
 cd CLAVIN
+git checkout 2.0.0
 echo "Downloading placenames file from Geonames..."
 sudo wget http://download.geonames.org/export/dump/allCountries.zip
 sudo unzip allCountries.zip
@@ -89,25 +96,12 @@ cd .m2
 sudo rm settings.xml
 sudo wget https://raw.githubusercontent.com/ahalterman/CLIFF-up/master/settings.xml
 
-echo "Download CLIFF"
-cd /home/vagrant
-#sudo git clone https://github.com/c4fcm/CLIFF
-sudo wget https://github.com/c4fcm/CLIFF/archive/v2.0.0.tar.gz
-sudo tar -xvzf v2.0.0.tar.gz
-sudo mv CLIFF-2.0.0/ CLIFF
-cd CLIFF
-sudo rm pom.xml 
-sudo wget https://raw.githubusercontent.com/ahalterman/CLIFF-up/master/pom.xml
-#sudo mv /home/vagrant/CLIFF-up/pom.xml /home/vagrant/CLIFF
-
-sudo mvn tomcat7:deploy -DskipTests
-
 echo "Move files around and redeploy"
-sudo mv /home/vagrant/CLIFF/target/CLIFF-2.0.0.war /home/vagrant/apache-tomcat-7.0.59/webapps/
 sudo /home/vagrant/apache-tomcat-7.0.59/bin/shutdown.sh
 sudo /home/vagrant/apache-tomcat-7.0.59/bin/startup.sh
 echo "Installation Complete"
 echo "You can log into the virtual machine by typing 'vagrant ssh'..."
 echo "If you need to manually start the Tomcat server, log in to the VM, then type 'sudo /home/vagrant/apache-tomcat-7.0.59/bin/startup.sh' to start the server"
-echo "You can temporarily shut down the virtual machine by typing 'vagrant halt'." 
-
+echo "You can pause the virtual machine by typing 'vagrant suspend'." 
+echo "You can start it again by typing 'vagrant resume'." 
+echo "Type 'vagrant' for more commands that let you control the virtual machine."
